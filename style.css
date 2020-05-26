@@ -1,0 +1,13 @@
+*{
+    box-sizing: border-box;
+}
+#toPdf{
+    background-color: aliceblue;
+    width: 50%;
+    padding: 0;
+}
+#toJpg{
+    background-color: aliceblue;
+    width: 50%;
+    padding: 0;
+}

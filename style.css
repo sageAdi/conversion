@@ -27,6 +27,6 @@
     height: 250px;
     display: none;
 }
-.createPdf{
+#createPdf{
     display: none;
 }

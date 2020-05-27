@@ -6,7 +6,7 @@ const imgDiv = document.getElementById('imgDiv');
 const imgPreview = imgDiv.querySelector('.imgPreview');
 const imgText = imgDiv.querySelector('.imgText');
 const uploadBtn = document.getElementsByClassName('upload');
-const createPdfBtn = document.getElementsByClassName('createPdf');
+const createPdfBtn = document.getElementById('createPdf');
 function clickHandlerHome() {
    home.style.display = null;
    toJpg.style.display = null;
@@ -31,7 +31,7 @@ function inpChange() {
       const reader = new FileReader();
       imgText.style.display = 'none';
       imgPreview.style.display = 'block';
-      createPdfBtn.style.display = 'block';
+      createPdfBtn.style.display = 'inline-block';
       reader.readAsDataURL(file);
       reader.addEventListener('load', function () {
          imgPreview.setAttribute('src', this.result);

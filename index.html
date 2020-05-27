@@ -61,7 +61,7 @@
                <h3>Changing jpg to pdf</h3>
             </div>
             <div class="card-body" id="imgDiv">
-               <div class="card-title">
+               <div class="card-title" id="drop-area">
                   <h5 class="imgText">Drop your file here or click the upload button</h5>
                   <img src="" alt="Image Preview" class="imgPreview">
                </div>
@@ -69,8 +69,9 @@
                <p class="card-text">
                   Your file must be in jpg or jpeg format only.
                </p>
-               <input type="file" name="file" id="inpFile" accept=".jpg" onchange="inpChange()">
+               <input type="file" name="file" id="inpFile" accept=".jpg" onchange="inpChange()" hidden="hidden" multiple>
                <button class="btn btn-primary upload" onclick="uploadBtnHandler()">Upload</button>
+               <button class="btn btn-primary createPdf" onclick="createPdf()">Create Pdf</button>
             </div>
          </div>
       </div>
@@ -80,7 +81,7 @@
               <h3>Changing pdf to jpg</h3>
            </div>
            <div class="card-body" >
-              <h5 class="card-title" ondrop="dropHandler(event)" ondragover="dragOverHandler(event)">
+              <h5 class="card-title">
                  Drop your file here or click the upload button
               </h5>
               <p class="card-text">

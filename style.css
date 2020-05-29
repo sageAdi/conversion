@@ -1,32 +1,72 @@
-*{
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@700&display=swap');
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
 }
-#toPdf{
-    background-color: aliceblue;
-    width: 50%;
-    padding: 0;
-    display: none;
+body {
+   background-color: #2b3252;
+   overflow-x: hidden;
 }
-#toJpg{
-    background-color: aliceblue;
-    width: 50%;
-    padding: 0;
-    display: none;
+#logo {
+   width: 250px;
+   height: 50%;
 }
-
-.card-title{
-    height: 250px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: aqua;
+.nav-item {
+   font-size: 1rem;
+   color: #fad744;
 }
-.imgPreview{
-    width: 250px;
-    height: 250px;
-    display: none;
+.navbar {
+   background-color: #ef5455;
 }
-#createPdf{
-    display: none;
+.banner {
+   position: relative;
+   height: 500px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   overflow: hidden;
+}
+.banner::before {
+   content: '';
+   background: url(./img/banner.jpg) no-repeat center;
+   background-size: cover;
+   position: absolute;
+   top: 0px;
+   right: 0px;
+   bottom: 0px;
+   left: 0px;
+   opacity: 0.75;
+}
+.banner-content {
+   position: relative;
+   text-align: center;
+   color: #ef5455;
+}
+.banner-content h1{
+   font-family: 'Roboto', sans-serif;
+   font-size: 3rem;
+   letter-spacing: 0.9;
+}
+.banner-content span {
+   color: #ffffff;
+}
+.gettingStarted {
+   font-family: 'Lato', sans-serif;
+   transition: 0.3s all;
+}
+.editor {
+   width: 100%;
+   height: 100%;
+}
+.editor .banner {
+   max-width: 90%;
+}
+#editImage {
+   display: none;
+   background-size: cover;
+}
+footer {
+   height: 200px;
+   background-color: #fad744;
 }

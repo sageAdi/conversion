@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor</title>
+</head>
+<body>
+    <h2>Welcome to Editor</h2>
+    <a href="index.html">home</a>
+    <div class="conatiner-fluid">
+        <div class="row">
+           <div class="col-md-12 col-sm-12 col-xs-12 editor">
+              
+           </div>
+           <div class="col-md-2 col-sm-2 col-xs-2">
+              <img src="" alt="Image Preview" id="editImage" />
+              <input
+                 type="file"
+                 name="inputFile"
+                 id="inputFile"
+                 onchange="inputFileChange()"
+                 hidden
+              />
+              <button class="btn btn-primary" id="upload" onclick="uploadBtnHandler()">Get Started</button>
+           </div>
+        </div>
+     </div>
+</body>
+</html>

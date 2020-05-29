@@ -14,8 +14,14 @@
    </head>
    <body>
       <div class="container-fluid p-0">
-         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Logo</a>
+         <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#"
+               ><img
+                  src="./img/Group 3.png"
+                  alt="Logo"
+                  id="logo"
+                  class="img-fluid"
+            /></a>
             <button
                class="navbar-toggler"
                type="button"
@@ -28,68 +34,32 @@
                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-               <ul class="navbar-nav">
+               <div class="mr-auto"></div>
+               <ul class="navbar-nav text-center">
                   <li class="nav-item active">
-                     <a class="nav-link" href="#home" onclick="clickHandlerHome()"
-                        >Home <span class="sr-only">(current)</span></a
+                     <a class="nav-link" href="#signIn" id="signIn" onclick=""
+                        >Sign In</a
                      >
                   </li>
-                  <li class="nav-item">
-                     <a
-                        class="nav-link"
-                        href="#toPdf"
-                        onclick="clickHandlerToPdf()"
-                        >Jpg to Pdf</a
-                     >
-                  </li>
-                  <li class="nav-item">
-                     <a
-                        class="nav-link"
-                        href="#toJpg"
-                        onclick="clickHandlerToJpg()"
-                        >Pdf to Jpg</a
+                  <li class="nav-item active">
+                     <a class="nav-link" href="#signUp" id="signUp" onclick=""
+                        >Sign Up</a
                      >
                   </li>
                </ul>
             </div>
          </nav>
       </div>
-      <div class="container-fluid" id="home">Home</div>
-      <div class="container-fluid mt-5" id="toPdf">
-         <div class="card text-center">
-            <div class="card-header">
-               <h3>Changing jpg to pdf</h3>
-            </div>
-            <div class="card-body" id="imgDiv">
-               <div class="card-title" id="drop-area">
-                  <h5 class="imgText">Drop your file here or click the upload button</h5>
-                  <img src="" alt="Image Preview" class="imgPreview">
-               </div>
-               
-               <p class="card-text">
-                  Your file must be in jpg or jpeg format only.
-               </p>
-               <input type="file" name="file" id="inpFile" accept=".jpg" onchange="inpChange()" hidden="hidden" multiple>
-               <button class="btn btn-primary upload" onclick="uploadBtnHandler()">Upload</button>
-               <button class="btn btn-primary" onclick="createPdf()" id="createPdf">Create Pdf</button>
-            </div>
+      <div class="banner">
+         <div class="banner-content">
+            <h1>Welcome To <span>PhotoVisual</span></h1>
+            <a href="editImage.html" class="btn btn-primary gettingStarted"
+               >Getting Started</a
+            >
          </div>
       </div>
-      <div class="container-fluid mt-5" id="toJpg">
-        <div class="card text-center">
-           <div class="card-header">
-              <h3>Changing pdf to jpg</h3>
-           </div>
-           <div class="card-body" >
-              <h5 class="card-title">
-                 Drop your file here or click the upload button
-              </h5>
-              <p class="card-text">
-                 Your file must be in pdf format only.
-              </p>
-              <button class="btn btn-primary">Upload</button>
-           </div>
-        </div>
+
+      <footer class="text-center">&#x24B8; 2020 </footer>
       <script
          src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
          integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

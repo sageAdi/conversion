@@ -1,0 +1,65 @@
+* {
+   box-sizing: border-box;
+}
+body {
+   padding: 0;
+   margin: 0;
+   overflow: hidden;
+}
+.imageDetailsText {
+   padding: 6px 12px;
+   background-color: #343a40;
+   color: white;
+   margin: 8px;
+   border-radius: 0.25rem;
+}
+#currentFile,
+.spanText {
+   padding: 0.5rem;
+   background-color: white;
+   border: 2px solid black;
+}
+#currentFile {
+   min-width: 150px;
+}
+.spanText {
+   min-width: 40px;
+}
+.home-icon{
+   margin-top: 10px;
+   width: 20%;
+}
+.previewImageDiv {
+   width: 150px;
+   height: 150px;
+   margin-top: 16px;
+}
+#previewImage {
+   max-width: 100%;
+   max-height: 100%;
+   display: none;
+   border: 2px solid white;
+}
+.imageDetails {
+   display: flex;
+   flex-flow: wrap row;
+}
+.editor {
+   height: 509px;
+   overflow: hidden;
+   display: flex;
+   flex-flow: row wrap;
+   align-items: center;
+   justify-content: center;
+}
+#editImage {
+   max-width: 100%;
+   max-height: 100%;
+   display: none;
+   background-size: cover;
+}
+.toolsRegion {
+   min-height: 450px;
+   margin: 6px;
+   padding: 6px 0px;
+}

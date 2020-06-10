@@ -4,7 +4,6 @@
 body {
    padding: 0;
    margin: 0;
-   overflow: hidden;
 }
 .imageDetailsText {
    padding: 6px 12px;
@@ -23,7 +22,7 @@ body {
    min-width: 150px;
 }
 .spanText {
-   min-width: 40px;
+   min-width: 70px;
 }
 .home-icon{
    margin-top: 10px;
@@ -45,12 +44,15 @@ body {
    flex-flow: wrap row;
 }
 .editor {
-   height: 509px;
-   overflow: hidden;
+   height: 100%;
    display: flex;
    flex-flow: row wrap;
    align-items: center;
    justify-content: center;
+}
+#canvasImg{
+   border: 2px solid purple;
+   overflow-x: hidden;
 }
 #editImage {
    max-width: 100%;

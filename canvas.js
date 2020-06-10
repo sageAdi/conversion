@@ -1,15 +1,8 @@
-const inputFileBtn = document.getElementById('inputFile');
-const editImage = document.getElementById('editImage');
-const previewImage = document.getElementById('previewImage');
-const uploadBtn = document.getElementById('upload');
-const currentFile = document.getElementById('currentFile');
-const width = document.getElementById('width');
-const height = document.getElementById('height');
-const canvas = document.getElementById('canvasImg');
-const context = canvas.getContext('2d');
-const loadImg = new Image();
+var canvas = document.getElementById('canvasImg');
 canvas.width = 800;
 canvas.height = 600;
+
+var gkhead = new Image();
 
 window.onload = function () {
    var ctx = canvas.getContext('2d');
@@ -26,9 +19,10 @@ window.onload = function () {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.restore();
 
-      ctx.drawImage(loadImg, 0, 0);
+      ctx.drawImage(gkhead, 0, 0);
    }
    redraw();
+
    var lastX = canvas.width / 2,
       lastY = canvas.height / 2;
 
@@ -94,40 +88,12 @@ window.onload = function () {
 
    canvas.addEventListener('DOMMouseScroll', handleScroll, false);
    canvas.addEventListener('mousewheel', handleScroll, false);
-}
+};
 
-function uploadBtnHandler() {
-   inputFileBtn.click();
-}
-function inputFileChange() {
-   context.clearRect(0,0,800,600)
-   const file = inputFileBtn.files[0];
-   if (file) {
-      const reader = new FileReader();
-      previewImage.style.display = 'block';
-      reader.readAsDataURL(file);
-      reader.addEventListener('load', function () {
-         previewImage.setAttribute('src', this.result);
-         loadImg.src = this.result;
-         currentFile.innerText = file.name;
-      });
-      loadImg.onload = () => {
-         context.drawImage(loadImg, 0, 0);
-         width.innerText = loadImg.width;
-         height.innerText = loadImg.height;
-      };
-   } else {
-      editImage.style.display = null;
-      editImage.setAttribute('src', '');
-      previewImage.style.display = null;
-      previewImage.setAttribute('src', '');
-      currentFile.innerText = '';
-      width.innerText = '';
-      height.innerText = '';
-      var ctx = canvas.getContext('2d');
-      ctx.fillText('Hello', 10, 0);
-   }
-}
+gkhead.src = 'http://phrogz.net/tmp/gkhead.jpg';
+
+// Adds ctx.getTransform() - returns an SVGMatrix
+// Adds ctx.transformedPoint(x,y) - returns an SVGPoint
 function trackTransforms(ctx) {
    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
    var xform = svg.createSVGMatrix();
@@ -197,4 +163,3 @@ function trackTransforms(ctx) {
       return pt.matrixTransform(xform.inverse());
    };
 }
-

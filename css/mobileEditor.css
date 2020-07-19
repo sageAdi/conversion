@@ -1,0 +1,27 @@
+* {
+   padding: 0;
+   margin: 0;
+}
+body {
+   height: 100vh;
+}
+.outerContainer {
+   display: flex;
+   flex-direction: column;
+   height: 100vh;
+   overflow: hidden;
+}
+.editor {
+   flex-basis: 90%;
+}
+.tool-group {
+   align-items: stretch;
+   flex-basis: 10%;
+}
+.tool-group > .row {
+   overflow-x: auto;
+   flex-wrap: nowrap;
+}
+.tool-group > .row > .col-4 {
+   flex: 0 0 auto;
+}

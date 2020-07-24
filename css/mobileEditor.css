@@ -12,14 +12,21 @@ body {
    overflow: hidden;
 }
 .editor {
-   flex-basis: 90%;
+   height: 90%;
 }
 .tool-group {
    align-items: stretch;
-   flex-basis: 10%;
+   height: 10%;
+}
+.row{
+   -ms-overflow-style: none;
+   scrollbar-width: none;
+}
+.row::-webkit-scrollbar {
+   display: none;
 }
 .tool-group > .row {
-   overflow-x: auto;
+   overflow-x: scroll;
    flex-wrap: nowrap;
 }
 .tool-group > .row > .col-4 {

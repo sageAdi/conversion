@@ -1,0 +1,27 @@
+{
+  "name": "conversion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "i8-icon": "^0.9.4",
+    "lite-server": "^2.5.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sageAdi/conversion.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sageAdi/conversion/issues"
+  },
+  "homepage": "https://github.com/sageAdi/conversion#readme"
+}

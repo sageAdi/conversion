@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Editor</title>
+      <link
+         rel="stylesheet"
+         href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+         crossorigin="anonymous"
+      />
+      <script
+         src="https://kit.fontawesome.com/7a8282dbbb.js"
+         crossorigin="anonymous"
+      ></script>
+      <link rel="stylesheet" href="./css/editor.css" />
+   </head>
+   <body>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+         <a href="#" class="navbar-brand">Logo</a>
+         <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#Mynavbar"
+         >
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="Mynavbar">
+            <ul class="navbar-nav mx-auto">
+               <li class="nav-item">
+                  <!-- INPUT FILE -->
+                  <input type="file" id="open-image" class="d-none">
+                  <a href="#" class="nav-link" id="open-nav"
+                     ><span
+                        class="fa fa-folder-open-o text-white card-img-top"
+                     ></span>
+                     Open</a
+                  >
+               </li>
+               <li class="nav-item">
+                  <a href="#" class="nav-link">
+                     <span class="fa fa-undo text-white card-img-top"></span
+                     >Undo</a
+                  >
+               </li>
+               <li class="nav-item">
+                  <a href="#" class="nav-link"
+                     ><span class="fas fa-redo text-white card-img-top"></span
+                     >Redo</a
+                  >
+               </li>
+               <li class="nav-item">
+                  <a href="#" class="nav-link"><span class="far fa-image text-white card-img-top"></span
+                     >Original</a>
+               </li>
+               <li class="nav-item">
+                  <a href="#" class="nav-link">
+                     <span class="fa fa-camera text-white card-img-top"></span
+                     >Snapshot</a
+                  >
+               </li>
+               <li class="nav-item">
+                  <a href="#" class="nav-link">
+                     <span class="fa fa-share text-white card-img-top"></span
+                     >Share</a
+                  >
+               </li>
+               <li class="nav-item">
+                  <a href="#" class="nav-link">
+                     <span class="fa fa-save text-white card-img-top"></span
+                     >Save</a
+                  >
+               </li>
+            </ul>
+         </div>
+      </nav>
+      <main>
+         <div class="container-fluid dark-bg first-container pt-5">
+            <div class="row">
+               <div class="col-md-3">
+                  <div class="row">
+                     <div class="col-3">
+                        <ul
+                           class="nav nav-pills flex-column"
+                           id="myTab"
+                           role="tablist"
+                           aria-orientation="vertical"
+                        >
+                           <li class="nav-item" role="presentation">
+                              <a
+                                 href="#basic"
+                                 class="nav-link active"
+                                 id="basic-tab"
+                                 data-toggle="pill"
+                                 role="tab"
+                                 aria-controls="basic"
+                                 aria-selected="true"
+                                 >Basic</a>
+                           </li>
+                           <li class="nav-item" role="presentation">
+                              <a
+                                 href="#effect"
+                                 class="nav-link"
+                                 id="effect-tab"
+                                 data-toggle="pill"
+                                 role="tab"
+                                 aria-controls="effect"
+                                 aria-selected="false"
+                                 >Effect</a
+                              >
+                           </li>
+                           <li class="nav-item" role="presentation">
+                              <a
+                                 href="#beauty"
+                                 class="nav-link"
+                                 id="beauty-tab"
+                                 data-toggle="pill"
+                                 role="tab"
+                                 aria-controls="beauty"
+                                 aria-selected="false"
+                                 >Beauty</a
+                              >
+                           </li>
+                           <li class="nav-item" role="presentation">
+                              <a
+                                 href="#frames"
+                                 class="nav-link"
+                                 id="frames-tab"
+                                 data-toggle="pill"
+                                 role="tab"
+                                 aria-controls="frames"
+                                 aria-selected="false"
+                                 >Frames</a
+                              >
+                           </li>
+                           <li class="nav-item" role="presentation">
+                              <a
+                                 href="#stickers"
+                                 class="nav-link"
+                                 id="stickers-tab"
+                                 data-toggle="pill"
+                                 role="tab"
+                                 aria-controls="stickers"
+                                 aria-selected="false"
+                                 >Stickers</a
+                              >
+                           </li>
+                           <li class="nav-item" role="presentation">
+                              <a
+                                 href="#text"
+                                 class="nav-link"
+                                 id="text-tab"
+                                 data-toggle="pill"
+                                 role="tab"
+                                 aria-controls="text"
+                                 aria-selected="false"
+                                 >Text</a
+                              >
+                           </li>
+                        </ul>
+                     </div>
+
+                     <div class="col-9">
+                        <div class="tab-content" id="myTabContent">
+                           <div
+                              class="tab-pane fade show active"
+                              id="basic"
+                              role="tabpanel"
+                              aria-labelledby="basic-tab"
+                           >
+                              <!-- Starting of Basic Accordion -->
+                              <div id="basic-accordion">
+                                 <!-- Starting of Crop Tools -->
+                                 <div class="card">
+                                    <div class="card-header p-0 text-center">
+                                       <a
+                                          class="nav-link"
+                                          href="#crop-tools"
+                                          data-toggle="collapse"
+                                          >Crop</a
+                                       >
+                                    </div>
+                                    <div
+                                       id="crop-tools"
+                                       class="collapse"
+                                       data-parent="#basic-accordion"
+                                    >
+                                       <div class="card-body">
+                                          Crop
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <!-- Ending of Crop Tools -->
+
+                                 <!-- Starting of Rotate Tools -->
+                                 <div class="card">
+                                    <div class="card-header p-0 text-center">
+                                       <a
+                                          class="nav-link"
+                                          href="#rotate-tools"
+                                          data-toggle="collapse"
+                                          >Rotate</a
+                                       >
+                                    </div>
+                                    <div
+                                       id="rotate-tools"
+                                       class="collapse"
+                                       data-parent="#basic-accordion"
+                                    >
+                                       <div class="card-body">
+                                          <div
+                                             class="d-flex justify-content-between"
+                                          >
+                                             <div class="btn-group">
+                                                <btn class="btn btn-secondary"
+                                                   ><span
+                                                      class="fa fa-repeat"
+                                                   ></span
+                                                ></btn>
+                                                <btn class="btn btn-secondary"
+                                                   ><span
+                                                      class="fa fa-undo"
+                                                   ></span
+                                                ></btn>
+                                             </div>
+                                             <div class="btn-group">
+                                                <btn class="btn btn-secondary"
+                                                   ><span
+                                                      class="fa fa-arrows-h"
+                                                   ></span
+                                                ></btn>
+                                                <btn class="btn btn-secondary"
+                                                   ><span
+                                                      class="fa fa-arrows-v"
+                                                   ></span
+                                                ></btn>
+                                             </div>
+                                          </div>
+                                          <div class="form-group">
+                                             <label for="straighten"
+                                                >Straighten</label
+                                             >
+                                             <input
+                                                type="range"
+                                                class="from-control-range"
+                                                id="straighten"
+                                             />
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <!-- Ending of Rotate Tools -->
+                                 <!-- Starting of Color Tools -->
+                                 <div class="card">
+                                    <div class="card-header p-0 text-center">
+                                       <a
+                                          class="nav-link"
+                                          href="#color-tools"
+                                          data-toggle="collapse"
+                                          >Color</a
+                                       >
+                                    </div>
+                                    <div
+                                       id="color-tools"
+                                       class="collapse"
+                                       data-parent="#basic-accordion"
+                                    >
+                                       <div class="card-body">
+                                          <div class="form-group">
+                                             <label for="temperature"
+                                                >Temperature</label
+                                             >
+                                             <input
+                                                type="range"
+                                                class="form-control-range"
+                                                id="temperature"
+                                             />
+                                          </div>
+                                          <div class="form-group">
+                                             <label for="tint">Tint</label>
+                                             <input
+                                                type="range"
+                                                class="form-control-range"
+                                                id="tinr"
+                                             />
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <!-- Ending of Color Tools -->
+                                 <!-- Starting of Resize Tools -->
+                                 <div class="card">
+                                    <div class="card-header p-0 text-center">
+                                       <a
+                                          class="nav-link"
+                                          href="#resize-tools"
+                                          data-toggle="collapse"
+                                          >Resize</a
+                                       >
+                                    </div>
+                                    <div
+                                       id="resize-tools"
+                                       class="collapse"
+                                       data-parent="#basic-accordion"
+                                    >
+                                       <div class="card-body">
+                                          <div class="input-group" role="group">
+                                             <input
+                                                type="number"
+                                                id="height"
+                                                class="form-control"
+                                                value="100"
+                                             />
+                                             <input
+                                                type="number"
+                                                id="weight"
+                                                class="form-control"
+                                                value="100"
+                                             />
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <!-- Ending of Resize Tools -->
+                                 <!-- Starting of Blur Tools -->
+                                 <div class="card">
+                                    <div class="card-header p-0 text-center">
+                                       <a
+                                          class="nav-link"
+                                          href="#blur-tools"
+                                          data-toggle="collapse"
+                                          >Blur</a
+                                       >
+                                    </div>
+                                    <div
+                                       id="blur-tools"
+                                       class="collapse"
+                                       data-parent="#basic-accordion"
+                                    >
+                                       <div class="card-body">
+                                          <div class="form-group">
+                                             <label for="blur"
+                                                >Blur level
+                                             </label>
+                                             <input
+                                                type="range"
+                                                id="blur"
+                                                class="form-control-range"
+                                             />
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <!-- Ending of Crop Tools -->
+                              </div>
+                              <!-- Ending of Basic Accordion -->
+                           </div>
+                           <div
+                              class="tab-pane fade text-white"
+                              id="effect"
+                              role="tabpanel"
+                              aria-labelledby="effect-tab"
+                           >
+                              Effect
+                           </div>
+                           <div
+                              class="tab-pane fade text-white"
+                              id="beauty"
+                              role="tabpanel"
+                              aria-labelledby="beauty-tab"
+                           >
+                              Beauty
+                           </div>
+                           <div
+                              class="tab-pane fade text-white"
+                              id="frames"
+                              role="tabpanel"
+                              aria-labelledby="frames-tab"
+                           >
+                              Frames
+                           </div>
+                           <div
+                              class="tab-pane fade text-white"
+                              id="stickers"
+                              role="tabpanel"
+                              aria-labelledby="stickers-tab"
+                           >
+                              Stickers
+                           </div>
+                           <div
+                              class="tab-pane fade text-white"
+                              id="text"
+                              role="tabpanel"
+                              aria-labelledby="text-tab"
+                           >
+                              Text
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-9 bg-info canvas-container">
+                  
+                  <img src="./img/banner.jpg" alt="Banner" id="img">
+                  <canvas id="canvas-img" width="300"></canvas>
+               </div>
+            </div>
+         </div>
+         <div class="container-fluid bg-secondary second-container"></div>
+      </main>
+      <script
+         src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+         crossorigin="anonymous"
+      ></script>
+      <script
+         src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+         crossorigin="anonymous"
+      ></script>
+      <script
+         src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+         crossorigin="anonymous"
+      ></script>
+      <script src="./js/editor.js"></script>
+   </body>
+</html>

@@ -12,7 +12,9 @@
 }
 .canvas-container {
    height: 70vh;
+   overflow: hidden;
 }
-.second-container {
-   height: 10vh;
+.second-container{
+   width: 100%;
+   height: 100px;
 }

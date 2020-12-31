@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.html",
   "dependencies": {
+    "caman": "^4.1.2",
     "font-awesome": "^4.7.0",
     "i8-icon": "^0.9.4",
     "lite-server": "^2.5.4"

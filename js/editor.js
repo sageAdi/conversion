@@ -1,54 +1,68 @@
+// Selecting new Image
 const openNav = document.querySelector('#open-nav');
 const openImage = document.querySelector('#open-image');
 const loadImage = new Image();
-const canvas = document.querySelector('#canvas-img');
-const context = canvas.getContext('2d');
 openNav.addEventListener('click', () => {
    openImage.click();
 });
 
-const img=document.querySelector("#img");
-const canvasConatiner= document.querySelector(".canvas-container");
-img.onload = function(){
-   let x = (img.width- canvasConatiner.offsetWidth)/2;
-   let y = (img.height- canvasConatiner.offsetHeight)/2;
-   console.log(x + " "+ y)
-   let ratio = canvasConatiner.offsetWidth/img.width;
-   console.log(ratio)
-   img.style.transform = "scale(${ratio})"
-}
-
+const img = document.querySelector('#img');
+const canvasContainer = document.querySelector('.canvas-container');
 openImage.addEventListener('change', () => {
    const file = openImage.files[0];
    if (file) {
-      context.clearRect(0, 0, 800, 600);
       const reader = new FileReader();
       reader.readAsDataURL(file);
       reader.addEventListener('load', function () {
          loadImage.src = this.result;
       });
       loadImage.onload = () => {
-         canvas.height = canvas.width * (loadImage.height / loadImage.width);
-         var oc = document.createElement('canvas'),
-            octx = oc.getContext('2d');
-         oc.width = loadImage.width * 0.5;
-         oc.height = loadImage.height * 0.5;
-         octx.drawImage(loadImage, 0, 0, oc.width, oc.height);
-         //octx.drawImage(oc, 0, 0, oc.width * 0.5, oc.height * 0.5);
-         context.drawImage(
-            oc,
-            0,
-            0,
-            oc.width,
-            oc.height,
-            0,
-            0,
-            canvas.width,
-            canvas.height
-         );
+         img.src = loadImage.src;
+         let x = -(img.width - canvasContainer.offsetWidth) / 2 + 'px';
+         let y = -(img.height - canvasContainer.offsetHeight) / 2 + 'px';
+         let ratio = 0;
+         if (canvasContainer.offsetWidth < img.width)
+            ratio = canvasContainer.offsetWidth / img.width;
+         else ratio = img.width / canvasContainer.offsetWidth;
+         img.style.transform = `translate(${x},${y}) scale(${ratio})`;
+         // Caman('#img', function () {
+         //    this.brightness(10);
+         //    this.contrast(30);
+         //    this.sepia(60);
+         //    this.saturation(-30);
+         //    this.render();
+         // });
+         
       };
    } else {
-      var ctx = canvas.getContext('2d');
-      ctx.fillText('Hello', 10, 0);
    }
+});
+//Rotate right
+const rotateRight = document.querySelector('.rotate-right');
+rotateRight.addEventListener('click', () => {
+   img.style.transform = 'rotate(90deg)';
+});
+//Rotate left
+const rotateLeft = document.querySelector('.rotate-left');
+rotateLeft.addEventListener('click', () => {
+   img.style.transform = 'rotate(-90deg)';
+});
+//Flip Horizontal
+const flipHorizontal = document.querySelector('.flip-horizontal');
+flipHorizontal.addEventListener('click', () => {
+   img.style.transform = 'scaleX(-1)';
+});
+//Flip Horizontal
+const flipVertical = document.querySelector('.flip-vertical');
+flipVertical.addEventListener('click', () => {
+   img.style.transform = 'scaleY(-1)';
+});
+//Temperature change
+const temperature = document.querySelector('#temperature');
+temperature.addEventListener('click', () => {
+   Caman('#img', function(){
+      console.log(temperature.value);
+      this.brightness(temperature.value);
+      this.render();
+   });
 });
